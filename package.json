@@ -26,12 +26,12 @@
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.3",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "sucrase": "^3.15.0"
   },
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
     "jest": "^26.1.0",
-    "nodemon": "^2.0.4",
-    "sucrase": "^3.15.0"
+    "nodemon": "^2.0.4"
   }
 }
