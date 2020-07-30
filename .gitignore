@@ -10,5 +10,4 @@ temp/
 yarn.lock
 
 dist/*
-
-!.gitignore
+!dist/.gitkeep
