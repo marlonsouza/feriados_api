@@ -1,25 +1,26 @@
+@host=localhost:3333
 
 ### GET Holiday
-GET http://localhost:3333/feriados/1400282/2020-12-25
+GET http://{{host}}/feriados/1400282/2020-12-25
 
 ### Store mobile holiday
-PUT  http://localhost:3333/feriados/1400282/carnaval
+PUT  http://{{host}}/feriados/1400282/carnaval
 
 
 ### GET CARNAVAL
-GET http://localhost:3333/feriados/1400282/2020-02-25
+GET http://{{host}}/feriados/1400282/2020-02-25
 
 ### DELETE CARNAVAL
-DELETE http://localhost:3333/feriados/1400282/carnaval
+DELETE http://{{host}}/feriados/1400282/carnaval
 
 ### Store mobile holiday
-PUT  http://localhost:3333/feriados/1400282/pascoa
+PUT  http://{{host}}/feriados/1400282/pascoa
 
 ### GET PASCOA
-GET http://localhost:3333/feriados/1400282/2020-04-12
+GET http://{{host}}/feriados/1400282/2020-04-12
 
 ### Store my birthday holiday
-PUT  http://localhost:3333/feriados/1400282/04-27 HTTP/1.1
+PUT  http://{{host}}/feriados/1400282/04-27 HTTP/1.1
 content-type: application/json
 
 {
@@ -28,16 +29,16 @@ content-type: application/json
 
 
 ###GET my birthday holiday
-GET http://localhost:3333/feriados/1400282/2020-04-27
+GET http://{{host}}/feriados/1400282/2020-04-27
 
 ###DELETE my birthdat holiday
-DELETE http://localhost:3333/feriados/1400282/04-27
+DELETE http://{{host}}/feriados/1400282/04-27
 
 ###GET DIA TRABALHADOR
-GET http://localhost:3333/feriados/4305439/2020-05-01
+GET http://{{host}}/feriados/4305439/2020-05-01
 
 ###POST CONSCIENCIA NEGRA
-PUT  http://localhost:3333/feriados/33/11-20/
+PUT  http://{{host}}/feriados/33/11-20/
 content-type: application/json
 
 {
@@ -45,10 +46,10 @@ content-type: application/json
 }
 
 ###DELETE CONSCIENCIA NEGRA
-DELETE http://localhost:3333/feriados/33/11-20/
+DELETE http://{{host}}/feriados/33/11-20/
 
 ###DELETE CONSCIENCIA NEGRA
-DELETE http://localhost:3333/feriados/3304557/11-20/
+DELETE http://{{host}}/feriados/3304557/11-20/
 
 ###DELETE FERIADO NACIONAL
-DELETE http://localhost:3333/feriados/3304557/05-01/
+DELETE http://{{host}}/feriados/3304557/05-01/
