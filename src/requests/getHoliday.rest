@@ -29,7 +29,7 @@ content-type: application/json
 
 
 ###GET my birthday holiday
-GET http://{{host}}/feriados/1400282/2020 -04-27
+GET http://{{host}}/feriados/1400282/2020-04-27
 
 ###DELETE my birthdat holiday
 DELETE http://{{host}}/feriados/1400282/04-27

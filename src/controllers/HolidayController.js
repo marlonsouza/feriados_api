@@ -130,7 +130,7 @@ class HolidayController {
     };
 
     if (city) where.where.city_id = city.id;
-    if (state) where.where.state_id = state.id;
+    if (state && ibge_code.length > 2) where.where.state_id = state.id;
 
     const holiday = await Holiday.findOne(where);
 
