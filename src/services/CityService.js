@@ -6,7 +6,7 @@ class CityService {
     const municipiosPath = path.resolve(
       __dirname,
       "..",
-      "database",
+      "..",
       "assets",
       "municipios-2019.csv"
     );
