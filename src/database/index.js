@@ -1,12 +1,11 @@
 import Sequelize from "sequelize";
 import dbConfig from "../config/database";
 
-import City from "../models/City";
 import State from "../models/State";
 import HolidayMobile from "../models/HolidayMobile";
 import Holiday from "../models/Holiday";
 
-const models = [City, State, HolidayMobile, Holiday];
+const models = [State, HolidayMobile, Holiday];
 
 class Database {
   constructor() {

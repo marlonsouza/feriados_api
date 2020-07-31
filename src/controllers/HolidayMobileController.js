@@ -1,5 +1,5 @@
 import HolidayMobile from "../models/HolidayMobile";
-import City from "../models/City";
+import CityService from "../services/CityService";
 import State from "../models/State";
 
 class HolidayMobileController {
@@ -7,7 +7,7 @@ class HolidayMobileController {
     return async (req, res) => {
       const { ibge_code } = req.params;
 
-      const city = await City.findOne({ where: { ibge_code } });
+      const city = CityService.findByIbgeCode(ibge_code);
       const state = await State.findOne({ where: { ibge_code } });
 
       if (!state && !city) {
@@ -40,7 +40,7 @@ class HolidayMobileController {
 
       const { ibge_code } = req.params;
   
-      const city = await City.findOne({ where: { ibge_code } });
+      const city = CityService.findByIbgeCode(ibge_code);
       const state = await State.findOne({ where: { ibge_code } });
   
       if (!state && !city) {

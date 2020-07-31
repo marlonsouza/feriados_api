@@ -16,11 +16,6 @@ class Holiday extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.City, {
-      foreignKey: "city_id",
-      as: "city",
-    });
-
     this.belongsTo(models.State, {
       foreignKey: "state_id",
       as: "state",

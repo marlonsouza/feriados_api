@@ -1,7 +1,7 @@
 import { parseISO, format } from "date-fns";
 
 import Holiday from "../models/Holiday";
-import City from "../models/City";
+import CityService from "../services/CityService";
 import State from "../models/State";
 
 class HolidayController {
@@ -19,7 +19,7 @@ class HolidayController {
       return res.json({ name: mobileHoliday.name });
     }
 
-    const city = await City.findOne({ where: { ibge_code } });
+    const city = CityService.findByIbgeCode(ibge_code);
     const state = await State.findOne({ where: { ibge_code } });
 
     if (!state && !city) {
@@ -47,7 +47,7 @@ class HolidayController {
 
     const holidayDate = parseISO(`2020-${holiday_date}`);
 
-    const city = await City.findOne({ where: { ibge_code } });
+    const city = CityService.findByIbgeCode(ibge_code);
     const state = await State.findOne({ where: { ibge_code } });
 
     if (!state && !city) {
@@ -111,7 +111,7 @@ class HolidayController {
         .json({ msg: "Não é possível remover feriado fixo" });
     }
 
-    const city = await City.findOne({ where: { ibge_code } });
+    const city = CityService.findByIbgeCode(ibge_code);
     const state = await State.findOne({
       where: {
         ibge_code: ibge_code.length > 2 ? ibge_code.slice(0, 2) : ibge_code,
