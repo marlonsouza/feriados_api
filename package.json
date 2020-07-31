@@ -8,7 +8,7 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "dist": "sucrase ./src -d /dist --transforms javascript,imports",
+    "dist": "sucrase ./src -d ./dist --transforms imports",
     "dev": "nodemon src/server.js",
     "dev:debug": "nodemon --inspect src/server.js",
     "test": "jest",

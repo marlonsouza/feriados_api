@@ -1,6 +1,6 @@
 import { parseISO } from "date-fns";
 
-import HolidayMobileService from "./HolidayMobileService";
+import HolidayMobileService from "../src/services/HolidayMobileService";
 
 test("Easter 2020", () => {
   const myDate = "2020-01-01";
