@@ -7,7 +7,8 @@ class Holiday extends Model {
         day_holiday: DataTypes.INTEGER,
         month_holiday: DataTypes.INTEGER,
         name: DataTypes.STRING,
-        fixed: DataTypes.BOOLEAN
+        fixed: DataTypes.BOOLEAN,
+        city_id: DataTypes.INTEGER
       },
       { sequelize }
     );

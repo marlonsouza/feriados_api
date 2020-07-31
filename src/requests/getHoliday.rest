@@ -1,4 +1,4 @@
-@host=apiferiados.herokuapp.com
+@host=localhost:3333
 
 ### GET Holiday
 GET http://{{host}}/feriados/1400282/2020-12-25

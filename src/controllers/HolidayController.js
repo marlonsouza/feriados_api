@@ -10,6 +10,18 @@ class HolidayController {
 
     const holidayDate = parseISO(holiday_date);
 
+    const fixedHoliday = await Holiday.findOne({
+      where: {
+        day_holiday: format(holidayDate, "dd"),
+        month_holiday: format(holidayDate, "MM"),
+        fixed: true
+      },
+    });
+
+    if(fixedHoliday){
+      return res.json({name: fixedHoliday.name});
+    }
+
     const mobileHoliday = req.mobilesHolidays.find(
       (mh) =>
         format(mh.holiday, "yyyy-MM-dd") === format(holidayDate, "yyyy-MM-dd")
@@ -26,12 +38,17 @@ class HolidayController {
       return res.status(404).json({ msg: "Codigo IBGE não encontrado" });
     }
 
-    const holiday = await Holiday.findOne({
+    const query = {
       where: {
         day_holiday: format(holidayDate, "dd"),
         month_holiday: format(holidayDate, "MM"),
       },
-    });
+    }
+
+    if(city) query.where.city_id = city.id;
+    if(state) query.where.state_id = state.id;
+
+    const holiday = await Holiday.findOne(query);
 
     if (!holiday) {
       return res.status(404).json({ msg: "Feriado não cadastrado" });
@@ -77,19 +94,13 @@ class HolidayController {
       day_holiday: format(holidayDate, "dd"),
       month_holiday: format(holidayDate, "MM"),
       name,
+      city_id: city ? city.id : null,
+      state_id: state ? state.id: null
     };
 
-    if (city) {
-      newHoliday.city_id = city.id;
-    }
+    const h = await Holiday.create(newHoliday);
 
-    if (state) {
-      newHoliday.state_id = state.id;
-    }
-
-    await Holiday.create(newHoliday);
-
-    return res.json({ name });
+    return res.json({ name: h.name });
   }
 
   async delete(req, res) {
