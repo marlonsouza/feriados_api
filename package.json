@@ -13,7 +13,7 @@
     "dev:debug": "nodemon --inspect src/server.js",
     "test": "jest",
     "sequelize:drop": "sequelize db:migrate:undo:all",
-    "sequelize:prod": "sequelize db:migrate sequelize db:seed:all",
+    "sequelize:prod": "sequelize db:migrate && sequelize db:seed:all",
     "start": "node ./dist/server.js",
     "start:prod": "yarn install && yarn sequelize:prod && yarn dist && yarn start"
   },
